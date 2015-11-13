@@ -2,7 +2,7 @@
   "name": "mongo1",
   "version": "1.0.0",
   "description": "",
-  "main": "boardApp.js",
+  "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "postinstall": "bower i",
