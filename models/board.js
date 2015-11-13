@@ -1,27 +1,13 @@
 "use strict";
 
 var mongoose = require("mongoose");
+var Schema = mongoose.Schema;
 
-var Board = {};
-
-var boardSchema = mongoose.Schema({
-	userName: String,
-	time: Number,
+var boardSchema = new Schema({
+	userName: String, //{type: String, required: true, unique: true},
+	timeStamp: Date,
 	message: String
 })
-
-
-// Board.create = function(cb){
-// 	var post = new Board({	
-// })
-// }
-
-
-Board.find = function(cb){
-	if (err) return console.err(err);
-	cb(console.log("look what I found..."))
-}
-
 
 var Board = mongoose.model("Board", boardSchema);
 
