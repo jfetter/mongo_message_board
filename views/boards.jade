@@ -5,18 +5,16 @@ title= title
 
   body
     .container
+        -var properties = ["userName", "timeStamp", "message"]
         .row
           h1 BOARDER
         .row
-          each prop in properties
-            label HOLLA
-            input#message
-            input.userInfo
+            input.userInfo(placeholder= "User Name")
+            input#message(placeholder= "wha'd'ya got?")
             p.userInfo
-          button.btn#post POST
+          button.btn#post HOLLA
         .row
           .col-sm-10.col-md-10.col-lg-10#board
-            p.userInfo
                 each prop in properties
                   th= prop
                 th: th

@@ -23,3 +23,17 @@ $.post("/board", message)
 	.fail(function(err){
 		console.error(err);
 	})
+
+//CODE PASTED FROM http://api.jquery.com/event.timestamp/
+	function timeStamp (event) {
+		var last, diff;
+		$( "div" ).click(function( event ) {
+  	if ( last ) {
+    	diff = event.timeStamp - last;
+    $( "div" ).append( "time since last event: " + diff + "<br>" );
+  	} else {
+    	$( "div" ).append( "Click again.<br>" );
+ 		 }
+  	last = event.timeStamp;
+});
+	}
