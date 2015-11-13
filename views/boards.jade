@@ -1,0 +1,32 @@
+title= title
+    link(href="bower_components/bootstrap/dist/css/bootstrap.min.css", rel='stylesheet')
+    link(href="bower_components/font-awesome/css/font-awesome.min.css", rel='stylesheet')
+    link(href="css/style.css", rel='stylesheet')
+
+  body
+    .container
+        .row
+          h1 BOARDER
+        .row
+          each prop in properties
+            label HOLLA
+            input#message
+            input.userInfo
+            p.userInfo
+          button.btn#post POST
+        .row
+          .col-sm-10.col-md-10.col-lg-10#board
+            p.userInfo
+                each prop in properties
+                  th= prop
+                th: th
+            tbody#list
+              each item in items
+                tr
+                  each val, prop in item
+                    td(class= prop, id= prop)= val
+
+    script(src='bower_components/jquery/dist/jquery.min.js')
+    script(src='bower_components/bootstrap/dist/js/bootstrap.min.js')
+    script(src='js/main.js')
+  
