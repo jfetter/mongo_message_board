@@ -9,22 +9,20 @@ title= title
         .row
           h1 BOARDER
         .row
-            input.userInfo(placeholder= "User Name")
+            input#user.userInfo(placeholder= "User Name")
             input#message(placeholder= "wha'd'ya got?")
             p.userInfo
           button.btn#post HOLLA
         .row
-          .col-sm-10.col-md-10.col-lg-10#board
-                each prop in properties
-                  th= prop
-                th: th
-            tbody#list
-              each item in items
-                tr
-                  each val, prop in item
-                    td(class= prop, id= prop)= val
-
+            each item in items
+              ul.col-sm-10.col-md-10.col-lg-10.board
+                li.col-sm-2.col-md-2.col-lg-2= item.userName
+                li.col-sm-2.col-md-3.col-lg-2= item.message
+                li.col-sm-2.col-md-2.col-lg-2= item.timeStamp
+                button.btn.edit edit
+                button.btn.trash trash
     script(src='bower_components/jquery/dist/jquery.min.js')
     script(src='bower_components/bootstrap/dist/js/bootstrap.min.js')
+    script(src="moment/min/moment-with-locales.min.js")
     script(src='js/main.js')
   

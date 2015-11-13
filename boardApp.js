@@ -22,7 +22,7 @@ app.use(express.static('public'));
 
 // ROUTES
 //redirects to boards
-app.use('/', require('./routes/'));
+app.use('/', require('./routes'));
 //channels all user info and messages to the same place
 app.use('/boards', require('./routes/boards'));
 
