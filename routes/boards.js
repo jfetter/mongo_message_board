@@ -23,18 +23,22 @@ router.get("/", function(req, res){
  	})
  })
 
-router.delete("/delete", function(req, res){ 
-	console.log("I'm in delete")
-	Board.remove({ timeStamp: "stamp"}, function(err, message) {
-    res.status(err ? 400 : 200).send(err || "message posted");
-	});
-})
 
-// router.put("/", function(req, res){ 
-// 	console.log("I'm in delete")
-// 	Board.remove({ _id: req.body.id }, function(err, message) {
-//     res.status(err ? 400 : 200).send(err || "message posted");
-// 	});
+
+// router.post("/edit", function(req, res){
+// 	var post = req.params._id
+// 	Board.findById(post, function(err, message){
+// 		return res.render("/edit", post),
+// 	})
+// 	console.log("finishing edit")
+// })
+
+// router.put("/edit", function(req, res){ 
+// 	console.log("I'm in put") 
+// 	Board.findOne({_id: req.body.id}, function(err, user){
+//     res.status(err ? 400 : 200).send(err || "message posted")
+//     return res.render('/edit', {userName: userName, mesage: message, timeStamp: timeStamp});
+// 	})
 // })
 
 module.exports = router;

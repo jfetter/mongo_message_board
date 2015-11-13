@@ -9,6 +9,7 @@ function init () {
 
 	$("#post").on("click", postMessage);
 	$(".trash").on("click", deleteMessage);
+	//$(".edit").on("click", editMessage);
 }
 
 function postMessage(event){
@@ -23,37 +24,36 @@ function postMessage(event){
 		.fail(function(err){
 			console.error(err);
 	})
-			updatePage();
 }
 
   function deleteMessage (event){
-   // var postIndex = thisUl.prevAll().length;
-   // selection.postIndex = postIndex
-   // thisUl.remove(); 
-debugger;
-   var stamp = $(this).closest("ul:nth-child(2)").children("li:nth-child(3)").text();
-  
-   console.log("stamp", stamp)
- 		  $.post('/boards/delete', stamp )
+   var id = $(this).data("id")
+   console.log(id)
+   debugger;
+   var $stamp = $(this).parent().children("li:nth-child(3)").text()
+   var id = {"_id": id}
+   console.log("id", id)
+ 		  $.post('/delete', id )
   .done(function(data){
   	  console.log("post was removed" , data)
   })
   .fail(function(err){
     console.error(err);
   })
-  	updatePage();
 }
 
-function updatePage(event){
-	var time =  Date.now();
-		message = {"userName": $("#user").val() , "message":$("#message").val(), "timeStamp": time}
-	console.log(message)
-	$.get("/boards", message)
-		.done(function(data){
-		 console.log("posted", data)
-		// var $newPost = newPost(message)
-		})
-		.fail(function(err){
-			console.error(err);
-	})
-}
+//   function editMessage (event){
+//    var id = $(this).data("id")
+//    console.log(id)
+//    debugger;
+//    var $stamp = $(this).parent().children("li:nth-child(3)").text()
+//    var id = {"_id": id}
+//    console.log("id", id)
+//  		  $.post('/boards/delete', id )
+//   .done(function(data){
+//   	  console.log("post was removed" , data)
+//   })
+//   .fail(function(err){
+//     console.error(err);
+//   })
+// }

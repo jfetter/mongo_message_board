@@ -19,10 +19,9 @@ title= title
                 li.col-sm-2.col-md-2.col-lg-2= item.userName
                 li.col-sm-2.col-md-3.col-lg-2= item.message
                 li.col-sm-2.col-md-2.col-lg-2= item.timeStamp
-                button.btn.edit(data-id= item._id) edit
-                button.btn.trash(data-id= item._id) trash
+                button.btn.edit(data-id= _id) edit
+                button.btn.trash(data-id= _id) trash
     script(src='bower_components/jquery/dist/jquery.min.js')
     script(src='bower_components/bootstrap/dist/js/bootstrap.min.js')
     script(src="moment/min/moment-with-locales.min.js")
     script(src='js/main.js')
-  

@@ -25,6 +25,8 @@ app.use(express.static('public'));
 app.use('/', require('./routes'));
 //channels all user info and messages to the same place
 app.use('/boards', require('./routes/boards'));
+app.use("/boards", require("./routes/boards"))
+app.use("/delete", require("./routes/boards"))
 
 // 404 HANDLER
 app.use(function(req, res){
